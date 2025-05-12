@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Digital Vesak Thorana - 2025 | CodeNerve | Vesak </title>
+  <link rel="icon" type="image/x-icon" href="https://cdn.glitch.global/a4067c98-d714-4fe3-907f-65096bb7cd5f/Grapic.png?v=1714975662070">
+
+  <style>
+
+    body{
+      background-image:url('https://cdn.glitch.global/a4067c98-d714-4fe3-907f-65096bb7cd5f/Untitled-1%20copy.jpg?v=1714999639271');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+
+    }
+    .layer{
+      position:absolute;
+      max-width: 100%;
+      height: auto;
+      left: 50%;;
+      transform: translateX(-50%);
+
+    }
+
+    .sharetext{
+
+      position: absolute;
+      text-shadow:2px 2px 2px #000000;
+      color: aliceblue;
+      top:1421px;
+      left:402px
+
+
+    }
+    .watchtext{
+      position: absolute;
+      text-shadow:2px 2px 2px #000000 ;
+      color: aliceblue;
+      top:996px;
+      left:314px;
+      width: 312px;
+      height: 50px;
+
+    }
+
+
+    #budurasback{
+      opacity: 0.4;
+    }
+
+
+
+    #loader{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1000;
+
+    }
+
+    #loader1{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);}
+
+    #myImg {
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #myImg:hover {
+      opacity: 0.7;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 14;
+      padding-top: 100px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.9);
+
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+    }
+
+
+    .modal-content {
+      animation-name: zoom;
+      animation-duration: 0.6s;
+    }
+
+    @keyframes zoom {
+      from {
+        transform: scale(0)
+      }
+      to {
+        transform: scale(1)
+      }
+    }
+
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    @media only screen and (max-width: 900px) {
+      .modal-content {
+        width: 100%;
+      }
+    }
+
+
+
+
+    #myDiv {
+      display: none;
+      text-align: center;
+    }
+
+    #but {
+      display: none;
+      z-index: 999;
+    }
+
+  </style>
+</head>
+
+<body onload="myFunction()" style="margin: 0;">
+
+<div id="loader" style="display: block;">
+  <img src="https://cdn.glitch.global/b6a5175c-1e57-4ec8-a9e3-256e3a028922/Untitled-1rr%20copy.png?v=1715272596900" alt="loader"
+       style="position: relative; width:375px; height:130px">
+</div>
+
+<div id="but" style="display: none;">
+  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+    <div onclick="showpage()"
+         style="width: 200px; height: 70px; background: linear-gradient(135deg, #FFD700, #FFA500);
+                  border-radius: 35px; cursor: pointer; transition: all 0.3s ease;
+                  box-shadow: 0 0 25px rgba(255, 215, 0, 0.5); display: flex; align-items: center;
+                  justify-content: center; position: relative; overflow: hidden; border: 2px solid #FFF;"
+         onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 0 35px rgba(255, 215, 0, 0.7)';"
+         onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 0 25px rgba(255, 215, 0, 0.5)';">
+      <div style="position: absolute; width: 100%; height: 100%; background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+                    animation: shine 2s infinite;"></div>
+      <span style="color: #FFF; font-size: 28px; font-weight: bold; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+                     letter-spacing: 2px; z-index: 1; font-family: 'Arial', sans-serif;">WATCH</span>
+    </div>
+  </div>
+</div>
+
+
+<div style="display:none;" id="myDiv">
+
+  <div class="layer" style="z-index:0;">
+
+    <img  style="position: absolute; top:257px  ; left:32px  ;
+       width:427px  ; height:427px  ;border-radius:50%" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/Untitled-1%20copy.png?v=1715243197277" alt="blackback">
+
+    <img  style="position: absolute; top:583px  ; left:-93px  ;
+       width:200px  ; height:200px  ; border-radius:50%" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/Untitled-1%20copy.png?v=1715243197277" alt="blackback">
+
+    <img  style="position: absolute; top:583px  ; left:383px  ;
+       width:200px  ; height:200px  ;border-radius:50%" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/Untitled-1%20copy.png?v=1715243197277" alt="blackback">
+
+    <img  style="position: absolute; top:393px  ; left:-170px  ;
+       width:200px  ; height:200px  ;border-radius:50%" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/Untitled-1%20copy.png?v=1715243197277" alt="blackback">
+
+    <img  style="position: absolute; top:195px  ; left:-120px  ;
+       width:200px  ; height:200px  ;border-radius:50%" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/Untitled-1%20copy.png?v=1715243197277" alt="blackback">
+
+    <img  style="position: absolute; top:71px  ; left:43px  ;
+       width:200px  ; height:200px  ;border-radius:50%" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/Untitled-1%20copy.png?v=1715243197277" alt="blackback">
+
+    <img  style="position: absolute; top:71px  ; left:250px  ;
+       width:200px  ; height:200px  ;border-radius:50%" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/Untitled-1%20copy.png?v=1715243197277" alt="blackback">
+
+    <img  style="position: absolute; top:195px  ; left:411px  ;
+       width:200px  ; height:200px  ;border-radius:50%" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/Untitled-1%20copy.png?v=1715243197277" alt="blackback">
+
+    <img  style="position: absolute; top:393px  ; left:462px  ;
+       width:200px  ; height:200px  ;border-radius:50%" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/Untitled-1%20copy.png?v=1715243197277" alt="blackback">
+
+  </div>
+
+
+
+  <div class="layer" style="z-index:1;">
+
+    <img id="budurasback" style="position: absolute; top:257px  ; left:32px  ;
+      width:427px  ; height:427px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/budurasback.gif?v=1715242511998" alt="budurasback">
+  </div>
+
+
+
+
+  <div class="layer" style="z-index:2;">
+
+    <img style="position: absolute; top:257px  ; left:32px  ;
+      width:427px  ; height:427px ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/outcircle.gif?v=1715190312102" alt="budurasouter">
+
+
+    <img id="lotusshape" style="position: absolute; top:304px  ; left:93px  ;
+      width:310px  ; height:310px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/budurasmala1.gif?v=1715525193829" alt="budurasmid">
+
+
+
+
+
+    <img style="position: absolute; top:260px  ; left: 36px;
+      width:420px  ; height:420px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/budurasmalaoutside.gif?v=1715190197505" alt="budurasout">
+
+    <img style="position: absolute; top:318px  ; left: 160px;
+      width:80px  ; height:80px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/smallrounds.gif?v=1715190323536" alt="smallrounds1">
+
+
+    <img style="position: absolute; top:318px  ; left: 253px;
+      width:80px  ; height:80px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/smallrounds.gif?v=1715190323536" alt="smallrounds2">
+
+
+    <img style="position: absolute; top:386px  ; left: 93px;
+      width:80px  ; height:80px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/smallrounds.gif?v=1715190323536" alt="smallrounds3">
+
+
+    <img style="position: absolute; top:386px  ; left: 319px;
+      width:80px  ; height:80px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/smallrounds.gif?v=1715190323536" alt="smallrounds4">
+
+
+    <img style="position: absolute; top:477px  ; left: 93px;
+      width:80px  ; height:80px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/smallrounds.gif?v=1715190323536" alt="smallrounds5">
+
+
+    <img style="position: absolute; top:477px  ; left: 319px;
+      width:80px  ; height:80px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/smallrounds.gif?v=1715190323536" alt="smallrounds6">
+
+
+    <img style="position: absolute; top:544px  ; left: 160px;
+      width:80px  ; height:80px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/smallrounds.gif?v=1715190323536" alt="smallrounds7">
+
+
+    <img style="position: absolute; top:544px  ; left: 253px;
+      width:80px  ; height:80px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/smallrounds.gif?v=1715190323536" alt="smallrounds8">
+
+  </div>
+
+
+
+  <div class="layer" style="z-index:3;">
+    <img style="position: absolute; top:361px  ; left:-215px  ;
+      width:916px  ; height:534px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/buddha.png?v=1715192748752" alt="buddhaphoto">
+  </div>
+
+
+
+  <div class="layer" style="z-index:4;">
+    <img style="position: absolute; top:583px  ; left:-93px  ;
+      width:200px  ; height:200px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/outcircle.gif?v=1715190312102" alt="outcircle">
+
+    <img  style="position: absolute; top:583px  ; left:-93px  ;
+      width:200px  ; height:200px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/first.gif?v=1715190227678" alt="secondcircle">
+
+    <img class="myImages" id="myImg" style="position: absolute; top:602px  ; left:-76px  ;
+      width:165px  ; height:165px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/1.png?v=1715244204288" alt="story1">
+  </div>
+
+
+
+  <div class="layer" style="z-index:5;">
+    <img style="position: absolute; top:393px  ; left:-170px  ;
+      width:200px  ; height:200px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/outcircle.gif?v=1715190312102" alt="outcircle">
+
+    <img style="position: absolute; top:393px  ; left:-170px  ;
+      width:200px  ; height:200px  ;" src ="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/first.gif?v=1715190227678" alt="secondcircle">
+
+    <img class="myImages" id="myImg" style="position: absolute; top:411px  ; left:-153px  ;
+      width:165px  ; height:165px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/2.png?v=1715244208986" alt="story2">
+  </div>
+
+
+  <div class="layer" style="z-index:6;">
+    <img style="position: absolute; top:195px  ; left:-120px  ;
+      width:200px  ; height:200px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/outcircle.gif?v=1715190312102" alt="outcircle">
+
+    <img style="position: absolute; top:195px  ; left:-120px  ;
+      width:200px  ; height:200px  ;" src ="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/second.gif?v=1715190319342" alt="secondcircle">
+
+    <img class="myImages" id="myImg" style="position: absolute; top:212px  ; left:-102px  ;
+      width:165px  ; height:165px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/3.png?v=1715244214502" alt="story3">
+  </div>
+
+
+  <div class="layer" style="z-index:7;">
+    <img style="position: absolute; top:71px  ; left:43px  ;
+      width:200px  ; height:200px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/outcircle.gif?v=171519031210" alt="outcircle">
+
+    <img style="position: absolute; top:71px  ; left:43px  ;
+      width:200px  ; height:200px  ;" src ="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/second.gif?v=1715190319342" alt="secondcircle">
+
+    <img class="myImages" id="myImg" style="position: absolute; top:89px  ; left:62px  ;
+      width:165px  ; height:165px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/4.png?v=1715244220342" alt="story4">
+  </div>
+
+
+  <div class="layer" style="z-index:8;">
+    <img style="position: absolute; top:71px  ; left:250px  ;
+      width:200px  ; height:200px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/outcircle.gif?v=1715190312102" alt="outcircle">
+
+    <img style="position: absolute; top:71px  ; left:250px  ;
+      width:200px  ; height:200px  ;" src ="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/second.gif?v=1715190319342" alt="secondcircle">
+
+    <img class="myImages" id="myImg" style="position: absolute; top:89px  ; left:268px  ;
+      width:165px  ; height:165px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/5.png?v=1715244226258" alt="story5">
+  </div>
+
+
+
+  <div class="layer" style="z-index:9;">
+    <img style="position: absolute; top:195px  ; left:411px  ;
+      width:200px  ; height:200px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/outcircle.gif?v=1715190312102" alt="outcircle">
+
+    <img style="position: absolute; top:195px  ; left:411px  ;
+      width:200px  ; height:200px  ;" src ="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/second.gif?v=1715190319342" alt="secondcircle">
+
+    <img class="myImages" id="myImg" style="position: absolute; top:212px  ; left:430px  ;
+      width:165px  ; height:165px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/6.png?v=1715244235724" alt="story6">
+  </div>
+
+
+  <div class="layer" style="z-index:10;">
+    <img style="position: absolute; top:393px  ; left:462px  ;
+      width:200px  ; height:200px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/outcircle.gif?v=1715190312102" alt="outcircle">
+
+    <img style="position: absolute; top:393px  ; left:462px  ;
+      width:200px  ; height:200px  ;" src ="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/first.gif?v=1715190227678" alt="secondcircle">
+
+    <img class="myImages" id="myImg" style="position: absolute; top:411px  ; left:480px  ;
+      width:165px  ; height:165px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/7.png?v=1715244239507" alt="story7">
+  </div>
+
+
+
+  <div class="layer" style="z-index:11;">
+    <img style="position: absolute; top:583px  ; left:383px  ;
+      width:200px  ; height:200px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/outcircle.gif?v=1715190312102" alt="outcircle">
+
+    <img style="position: absolute; top:583px  ; left:383px  ;
+      width:200px  ; height:200px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/first.gif?v=1715190227678" alt="secondcircle">
+
+    <img class="myImages" id="myImg" style="position: absolute; top:602px  ; left:403px  ;
+      width:165px  ; height:165px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/8.png?v=1715244245441" alt="story8">
+  </div>
+
+
+  <div id="myModal" class="modal">
+    <span class="close"> &times; </span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+
+
+
+  <div class="layer" style="z-index:-1;">
+    <img style="position: absolute; top:-21px  ; left:117px  ;
+      width:259px  ; height:147px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/dharmachakra.gif?v=1715249061733" alt="dhramachakra">
+
+    <img style="position: absolute; top:27px  ; left:127px  ;
+      width:61px  ; height:59px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/Flag_L.gif?v=1715190236192" alt="flagl">
+
+    <img style="position: absolute; top:27px  ; left:306px  ;
+      width:61px  ; height:59px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/Flag_R.gif?v=1715190240579" alt="flagr">
+
+  </div>
+
+
+  <div class="layer" style="z-index:-1;">
+    <img style="position: absolute; top:796px  ; left:-174px  ;
+      width:849px  ; height:148px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/Untitled-234%20copy.jpg?v=1716480058151" alt="fotter">
+
+
+    <img style="position: absolute; top:786px  ; left:-184px  ;
+      width:870px  ; height:169px  ;" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/fotterd.gif?v=1715259089137" alt="flagr">
+
+  </div>
+
+
+
+  <div class="layer" style="z-index:-1;">
+
+    <img style="position: absolute; top:205px  ; left:289px  ;
+      width:210px  ; height:147px  ; transform:rotate(36deg);" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/spacetop.gif?v=1715266925876" alt="spacetop1">
+
+    <img style="position: absolute; top:335px  ; left:375px  ;
+      width:210px  ; height:147px  ;transform:rotate(74deg);" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/spacetop.gif?v=1715266925876" alt="spacetop2">
+
+    <img style="position: absolute; top:491px  ; left:364px  ;
+      width:210px  ; height:147px  ;transform:rotate(111deg);" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/spacetop.gif?v=1715266925876" alt="spacetop3">
+
+    <img style="position: absolute; top:491px  ; left:-81px  ;
+      width:210px  ; height:147px  ;transform:rotate(249deg);" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/spacetop.gif?v=1715266925876" alt="spacetop4">
+
+    <img style="position: absolute; top:335px  ; left:-90px  ;
+      width:210px  ; height:147px  ;transform:rotate(285deg);" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/spacetop.gif?v=1715266925876" alt="spacetop5">
+
+    <img style="position: absolute; top:209px  ; left:-9px  ;
+      width:210px  ; height:147px  ;transform:rotate(319deg);" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/spacetop.gif?v=1715266925876" alt="spacetop6">
+
+    <img style="position: absolute; top:158px  ; left:140px  ;
+      width:210px  ; height:147px  ;transform:rotate(0deg);" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/spacetop.gif?v=1715266925876" alt="spacetop7">
+  </div>
+
+
+
+  <div class="layer" style="z-index: -1;">
+    <img style="position: absolute; top:437px  ; left:-16px  ;
+      width:520px  ; height:512px  ; opacity:0.2; " src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/buddhau.gif?v=1715269064723" alt="buddhau">
+  </div>
+
+
+  <div class="layer">
+    <audio id="audio" src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/My%20Audio-1.mp3?v=1746984293214" loop = "loop"></audio>
+  </div>
+
+
+  <div class="layer">
+    <img
+      style="position: absolute;top: 42px;left: 502px;width: 39px;height: 42px;"
+      onclick="onlyaudioplay()"
+      src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/play.png?v=1715287385513"
+      alt="playb"
+    />
+    <h3 style="position: absolute; top: 69px; left: 502px; color: yellow">
+      Play
+    </h3>
+  </div>
+
+  <div class="layer">
+    <img
+      style="position: absolute;top: 42px;left: 620px;width: 39px;height: 42px;"
+      onclick="onlyaudiopause()"
+      src="https://cdn.glitch.global/661357fd-302e-4b7b-a667-3ab24709234d/pause.png?v=1715287375586"
+      alt="pauseb"
+    />
+    <h3 style="position: absolute; top: 69px; left: 617px; color: yellow">
+      Pause
+    </h3>
+  </div>
+
+
+
+  <div class="layer"
+       style="position:absolute; top: 1620px; left:440px;width: 100px;height: 50px;">
+    <form id="messageForm" style="margin-bottom: 20px;">
+      <input type="text" id="messageInput" placeholder="Enter your message" 
+             style="padding: 8px; border-radius: 4px; border: 1px solid #ccc; width: 200px;">
+      <button type="submit" 
+              style="padding: 8px 15px; background: linear-gradient(135deg, #FFD700, #FFA500); 
+                     border: none; border-radius: 4px; color: white; cursor: pointer; margin-left: 5px;">
+        Send
+      </button>
+    </form>
+    <a href="https://www.freecounterstat.com" title="page counter">
+      <img src="https://counter4.optistats.ovh/private/freecounterstat.php?c=gl5zpbc9qxd7xhxe41657aqr7yj5espe" border="0" title="page counter" alt="page counter">
+    </a>
+  </div>
+
+
+
+
+
+
+
+</div>
+</body>
+<script>
+  var myVar;
+
+  function myFunction() {
+
+    document.getElementById("loader").style.display = "block";
+    document.getElementById("but").style.display = "none";
+    document.getElementById("myDiv").style.display = "none";
+    myVar = setTimeout(showbutton, 2000);
+  }
+
+  function showbutton() {
+
+    document.getElementById("loader").style.display = "none";
+    document.getElementById('but').style.display = "block";
+    document.getElementById("loader1").style.display = "none";
+
+  }
+  function showpage(){
+
+    document.getElementById("but").style.display = "none";
+    document.getElementById("myDiv").style.display = "block";
+    document.getElementById('audio').play();
+    document.getElementById("loader1").style.display = "none";
+
+  }
+
+  function onlyaudioplay(){
+    document.getElementById('audio').play();
+
+  }
+  function onlyaudiopause(){
+    document.getElementById('audio').pause();
+
+  }
+  var modal = document.getElementById('myModal');
+  var images = document.getElementsByClassName('myImages');
+  var modalImg = document.getElementById("img01");
+  var captionText = document.getElementById("caption");
+
+
+  for (var i = 0; i < images.length; i++) {
+    var img = images[i];
+
+    img.onclick = function(evt) {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+    }
+  }
+
+  var span = document.getElementsByClassName("close")[0];
+
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  // Handle form submission
+  document.getElementById('messageForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const message = document.getElementById('messageInput').value;
+    
+    try {
+      const response = await fetch('http://localhost:3000/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message })
+      });
+      
+      if (response.ok) {
+        alert('Message sent successfully!');
+        document.getElementById('messageInput').value = '';
+      } else {
+        alert('Failed to send message');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Error sending message');
+    }
+  });
+
+</script>
+</html>
